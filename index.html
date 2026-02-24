@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,8 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg:         #0e1c24;
-    --surface:    #152330;
+    --bg:         rgb(32,32,32);
+    --surface:    rgb(42,42,42);
     --border:     rgba(58,174,205,0.13);
     --accent:     #3aaecd;
     --accent2:    #faae1a;
@@ -23,10 +22,12 @@
     --indigo:     #311ecd;
   }
   html, body { height: 100%; overflow: hidden; }
-  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; }
+  body {
+    background: radial-gradient(ellipse at center, rgb(32,32,32) 0%, rgb(28,28,28) 50%, rgb(25,25,25) 100%);
+    color: var(--text); font-family: 'DM Sans', sans-serif; }
   body::before {
     content: ''; position: fixed; inset: 0;
-    background-image: linear-gradient(rgba(58,174,205,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(58,174,205,0.04) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(58,174,205,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(58,174,205,0.03) 1px, transparent 1px);
     background-size: 56px 56px; animation: gridDrift 24s linear infinite; pointer-events: none; z-index: 0;
   }
   @keyframes gridDrift { from { background-position: 0 0; } to { background-position: 56px 56px; } }
@@ -41,7 +42,7 @@
   .mission span { color:#3aaecd; }
   .countdown { display:flex;align-items:flex-start;gap:.9rem;margin-bottom:2.2rem;animation:fadeUp .7s .16s ease both; }
   .unit { display:flex;flex-direction:column;align-items:center;gap:.45rem; }
-  .digit-wrap { position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1rem 1.35rem;min-width:88px;text-align:center;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.35),inset 0 1px 0 rgba(58,174,205,.08); }
+  .digit-wrap { position:relative;background:rgb(42,42,42);border:1px solid rgba(58,174,205,0.13);border-radius:14px;padding:1rem 1.35rem;min-width:88px;text-align:center;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.25),inset 0 1px 0 rgba(58,174,205,.08); }
   .digit-wrap::before { content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(58,174,205,.4),transparent); }
   .digit-wrap::after { content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(255,255,255,.03); }
   .digit { font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,5.5vw,4.6rem);line-height:1;color:var(--light);letter-spacing:.03em;transition:color .25s; }
